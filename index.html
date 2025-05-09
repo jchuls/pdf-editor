@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Editor Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body { padding: 20px; }
+        #pdf-editor-container canvas { border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>PDF Editor 데모</h1>
+    <div id="pdf-editor-menu" class="mb-3"></div>
+    <div id="pdf-editor-container"></div>
+    <script src="./dist/pdfEditor.js"></script>
+    <script>
+    pdfEditor.loadAndEnablePdfEditor({
+        pdfUrl: 'http://sample.com/sample-pdf/sample.pdf?real_file=sample',
+        containerId: 'pdf-editor-container',
+        menuId: 'pdf-editor-menu',
+        fileIdParam: 'real_file'
+    });
+    </script>
+</body>
+</html>
